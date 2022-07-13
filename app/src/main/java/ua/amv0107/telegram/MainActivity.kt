@@ -1,11 +1,15 @@
 package ua.amv0107.telegram
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import ua.amv0107.telegram.activities.RegisterActivity
 import ua.amv0107.telegram.databinding.ActivityMainBinding
 import ua.amv0107.telegram.ui.fragments.ChatsFragment
 import ua.amv0107.telegram.ui.objects.AppDrawer
+import ua.amv0107.telegram.utilits.replaceActivity
+import ua.amv0107.telegram.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -25,12 +29,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer, ChatsFragment())
-            .commit()
-
+        if (true) {
+            /*TODO Если пользователь авторизован */
+            setSupportActionBar(mToolbar)
+            mAppDrawer.create()
+            replaceFragment(ChatsFragment())
+        } else {
+            replaceActivity(RegisterActivity())
+        }
     }
 
     private fun initFields() {
