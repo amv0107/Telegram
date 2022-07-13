@@ -2,12 +2,17 @@ package ua.amv0107.telegram
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
+import com.mikepenz.materialdrawer.model.DividerDrawerItem
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import ua.amv0107.telegram.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -42,13 +47,72 @@ class MainActivity : AppCompatActivity() {
             .withSelectedItem(-1)
             .withAccountHeader(mHeader)
             .addDrawerItems(
-                ProfileDrawerItem()
+                PrimaryDrawerItem()
                     .withIdentifier(100)
-                    //.withIcon(true)
+                    .withIconTintingEnabled(false)
                     .withName("Создать группу")
                     .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_create_groups),
+                PrimaryDrawerItem()
+                    .withIdentifier(101)
+                    .withIconTintingEnabled(false)
+                    .withName("Секретный чат")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_secret_chat),
+                PrimaryDrawerItem()
+                    .withIdentifier(102)
+                    .withIconTintingEnabled(false)
+                    .withName("Создать канал")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_create_channel),
+                PrimaryDrawerItem()
+                    .withIdentifier(103)
+                    .withIconTintingEnabled(false)
+                    .withName("Контакты")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_contacts),
+                PrimaryDrawerItem()
+                    .withIdentifier(104)
+                    .withIconTintingEnabled(false)
+                    .withName("Звонки")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_phone),
+                PrimaryDrawerItem()
+                    .withIdentifier(105)
+                    .withIconTintingEnabled(false)
+                    .withName("Избранное")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_favorites),
+                PrimaryDrawerItem()
+                    .withIdentifier(106)
+                    .withIconTintingEnabled(false)
+                    .withName("Настройки")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_settings),
+                DividerDrawerItem(),
+                PrimaryDrawerItem()
+                    .withIdentifier(107)
+                    .withIconTintingEnabled(false)
+                    .withName("Пригласить друзей")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_invate),
+                PrimaryDrawerItem()
+                    .withIdentifier(108)
+                    .withIconTintingEnabled(false)
+                    .withName("Вопросы о Telegram")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.ic_menu_help),
             )
-            .build()
+            .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+                override fun onItemClick(
+                    view: View?,
+                    position: Int,
+                    drawerItem: IDrawerItem<*>
+                ): Boolean {
+                    Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
+                    return false
+                }
+            }).build()
     }
 
     private fun createHeader() {
