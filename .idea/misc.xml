@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/drawable/header.xml" value="0.165" />
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/fragment_chats.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/fragment_settings.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

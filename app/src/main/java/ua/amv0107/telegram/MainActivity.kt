@@ -14,6 +14,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import ua.amv0107.telegram.databinding.ActivityMainBinding
+import ua.amv0107.telegram.ui.ChatsFragment
+import ua.amv0107.telegram.ui.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -35,6 +37,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
         setSupportActionBar(mToolbar)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer, ChatsFragment())
+            .commit()
         createHeader()
         createDrawer()
     }
@@ -109,7 +114,12 @@ class MainActivity : AppCompatActivity() {
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    Toast.makeText(applicationContext, position.toString(), Toast.LENGTH_SHORT).show()
+                    when(position){
+                        6 -> supportFragmentManager.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(R.id.dataContainer, SettingsFragment())
+                            .commit()
+                    }
                     return false
                 }
             }).build()
