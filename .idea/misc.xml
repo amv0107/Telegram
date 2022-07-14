@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/drawable/header.xml" value="0.165" />
+        <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/drawable/ic_btn_action_menu_exit.xml" value="0.165" />
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/fragment_chats.xml" value="0.20416666666666666" />
         <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/layout/fragment_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyDevelopments/Android/Telegram/app/src/main/res/menu/settings_action_menu.xml" value="0.203125" />
       </map>
     </option>
   </component>
